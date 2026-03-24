@@ -6,9 +6,9 @@ Built with React + TypeScript + Tailwind CSS + Vite.
 Deployed to GitHub Pages.
 
 ## Design Philosophy
-Cinematic, editorial, technical but human. The aurora borealis photo 
-shot in Sweden 2021 is the visual anchor of the entire site. 
-Every design decision should feel like it belongs in the same universe 
+Cinematic, editorial, technical but human. The aurora borealis photo
+shot in Sweden 2021 is the visual anchor of the entire site.
+Every design decision should feel like it belongs in the same universe
 as that photo.
 
 ## Color Palette
@@ -35,6 +35,12 @@ as that photo.
 - Buttons secondary: border 1.5px #9D7CD8, text #9D7CD8, rounded-full, font-bold
 - Pulsing dot indicator: animated ping in #70FFAF
 
+## Scroll Animations
+- All sections except Hero use framer-motion scroll fade-in
+- Pattern: opacity 0→1, y 40→0, duration 0.6, ease 'easeOut', viewport once: true
+- Use `Variants` type import from framer-motion when defining cardVariants to avoid TS error on ease
+- Stagger child cards with staggerChildren: 0.12 on the grid container
+
 ## Responsive Design
 - Mobile first — single column by default
 - md: breakpoint for two column layouts
@@ -59,8 +65,7 @@ as that photo.
 3. About — two column, story left, quick facts right
 4. Work — cards for projects (Security Lake, Infra Provisioner, This Site)
 5. Certifications — clean grid of cert badges
-6. Contact — simple, warm
-7. Footer — minimal
+6. Footer — minimal
 
 ## Nav Spec
 - Fixed top, backdrop blur, background rgba(18,19,29,0.8)
@@ -69,7 +74,10 @@ as that photo.
 - Default link color: #F8F8F2 at 60% opacity
 - Hover: 100% opacity
 - Active link (scrollspy): #70FFAF, full opacity
-- Use react-scroll Link with spy={true} and activeClass for highlighting
+- Use react-scroll Link with spy={true} and activeStyle (NOT activeClass)
+- activeStyle reason: Tailwind JIT cannot generate dynamically applied class strings at runtime
+- CRITICAL: Do NOT add `html { scroll-behavior: smooth }` to CSS — it breaks react-scroll scrollspy detection
+- Each link has its own spy and offset config: Certs uses spy=false and offset=-200 because the section is short
 
 ## Nav Mobile Behaviour
 - On mobile: hide nav links, show hamburger menu icon (three lines)
@@ -78,30 +86,24 @@ as that photo.
 - Close menu when a link is clicked
 - Hamburger icon color: #F8F8F2
 
-## Nav Mobile Behaviour
-- On mobile: hide nav links, show hamburger menu icon (three lines)
-- On hamburger click: dropdown menu appears showing all nav links vertically
-- Links: Work, Skills, About, Certs
-- Close menu when a link is clicked
-- Hamburger icon color: #F8F8F2
-
 ## Hero Spec
 - Hero headline has a typing animation on load
 - Types out "I build things in the cloud to empower people."
 - Cursor blinks in #70FFAF while typing
-- Typing speed: fast but readable, around 50ms per character
-- Cursor disappears after typing completes
+- Typing speed: fast but readable, around 40-50ms per character
+- Cursor disappears 800ms after typing completes
 - Only runs once on page load
+- No framer-motion on Hero — it should be visible immediately without scroll trigger
 
 ## Work Section Spec
 
 ### Card 1 — AWS Security Lake
 - Title: AWS Central Logging Using Amazon Security Lake
 - Tag: Cloud Infrastructure
-- Description: Deployed a central logging service using Terraform across 
-  3 AWS Organizations, 6 global regions, and 3,000+ accounts. Led engineering 
-  of self-service log access automations enabling teams to query data via 
-  one-click CloudFormation templates. Resulted in 47% infrastructure cost 
+- Description: Deployed a central logging service using Terraform across
+  3 AWS Organizations, 6 global regions, and 3,000+ accounts. Led engineering
+  of self-service log access automations enabling teams to query data via
+  one-click CloudFormation templates. Resulted in 47% infrastructure cost
   reduction vs previous custom setup.
 - Tags: Terraform, AWS, CI/CD, Security
 - Note: Work was presented at AWS re:Invent 2025 (SEC347)
@@ -109,9 +111,9 @@ as that photo.
 ### Card 2 — Infra Provisioner Mockup
 - Title: Self-Service Infrastructure Provisioner
 - Tag: Developer Experience
-- Description: Built a personal project to make developers' lives easier — 
-  instead of knowing which Terraform modules to use, developers call an API 
-  with their specifications and compliant Terraform modules 
+- Description: Built a personal project to make developers' lives easier.
+  Instead of knowing which Terraform modules to use, developers call an API
+  with their specifications and compliant Terraform modules
   automatically provisions the infrastructure for them.
 - Tags: Terraform, Python, API, Developer Experience
 - Link: https://github.com/augustinechiajh/infra-provisioner-mockup
@@ -119,9 +121,9 @@ as that photo.
 ### Card 3 — This Portfolio Site
 - Title: Portfolio Site Revamp
 - Tag: Learning by Experimentation
-- Description: Rebuilt my portfolio to experience AI-assisted 
-  development first hand — using Google Stitch for design prototyping, 
-  Claude Code with spec-driven development, and React + TypeScript replacing 
+- Description: Rebuilt my portfolio to experience AI-assisted
+  development first hand. Used Google Stitch for design prototyping,
+  Claude Code with spec-driven development, and React + TypeScript replacing
   a previous Hugo template.
 - Tags: React, TypeScript, Tailwind CSS, Google Stitch, Claude Code
 - Link: https://github.com/augustinechiajh/portfolio-v2
@@ -129,12 +131,13 @@ as that photo.
 ## Certifications Section Spec
 - Section label: Certifications
 - Section heading: Credentials that back the work.
-- Layout: 3 column grid on desktop, 2 column on mobile
+- Layout: 3 column grid on desktop, 1 column on mobile
 - Each card is horizontal within the grid cell: cert badge icon left (~80px), details right
 - Details: cert name (bold), issuing body, validity period, short one-line description
 - Verify link at bottom of each card
 - Each cert card has skill tags at the bottom
 - Tag style: same purple bordered pills as Work cards
+- Hover: card lifts (-translate-y-2), badge scales (group-hover:scale-110)
 - Tags per cert:
   1. AWS DOP: CI/CD, IaC, Monitoring, Security, Automation
   2. AWS SAP: Cloud Architecture, Multi-Account, Cost Optimisation, Migration
@@ -147,8 +150,7 @@ as that photo.
 
 ## Footer Spec
 - Minimal, clean
-- Left: "Augustine" name in cream white
-- Center: copyright "© 2026 Augustine Chia"
+- Left: copyright "© 2026 Augustine Chia"
 - Right: LinkedIn and GitHub icon links
 - LinkedIn: https://linkedin.com/in/augustine-chia
 - GitHub: https://github.com/augustinechiajh
@@ -163,14 +165,12 @@ as that photo.
 - No borders between sections
 - Don't claim I built everything solo when teams were involved
 
-## Skills
-Use the frontend-design skill for all UI component development.
-See .claude/skills/frontend-design/SKILL.md
-
 ## Deployment
-- Platform: GitHub pages
+- Platform: GitHub Pages
 - Method: GitHub Actions on push to main
+- Workflow: lint job first, then deploy job (needs: lint)
 - Build command: npm run build
 - Output directory: dist
 - Node version: 20
 - Base URL: /portfolio-v2/
+- Vite config: base: '/portfolio-v2/'

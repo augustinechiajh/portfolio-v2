@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Personal Portfolio — augustinechiajh.github.io/portfolio-v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live site: https://augustinechiajh.github.io/portfolio-v2
 
-Currently, two official plugins are available:
+## What is this?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A personal portfolio website I built from scratch to experiment with 
+AI-assisted UI design and web development. The goal was to learn through experimentation.
 
-## React Compiler
+## Why rebuild from scratch?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+My previous portfolio was based on a Hugo template. It worked, but I 
+found the boundaries of the template restrictive to building something 
+I could actually be proud of. I decided to build one entirely from 
+scratch instead, using Google Stitch to help me achieve my design goals.
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React + TypeScript — I wanted to learn both, this project was the excuse
+- Vite — recommended for fast prototyping and HMR (hot module reload), 
+  which updates the browser instantly on save without rerunning the build
+- Tailwind CSS — popular styling tool
+- Framer Motion — scroll animations
+- GitHub Actions — CI/CD pipeline that lints, builds, and deploys on 
+  every push to main
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Spec-driven development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This project was my first experimentation with spec-driven development. The approach: 
+define a CLAUDE.md spec file first, then use that as the single source 
+of truth when building with Claude Code.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The spec lives at `.claude/CLAUDE.md`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Design
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The design is anchored around a photo I shot in Sweden in 2021 during 
+the NUS Overseas College programme. It is an image of the aurora borealis I witnessed for 
+the first time. The color palette (aurora green #70FFAF, indigo-purple #9D7CD8, 
+dark base #12131d) is extracted from that photo.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Google Stitch was used for initial design prototyping before any code 
+was written. The DESIGN.md and code for the initial prototype was fed into Claude, to synthesise a CLAUDE.md spec file that was used in Claude Code for component development.
