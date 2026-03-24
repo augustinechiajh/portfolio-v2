@@ -20,7 +20,7 @@ function Hero() {
                             Cloud Infrastructure Engineer
                         </span>
                     </div>
-                    <h1 className="text-6xl md:text-7xl font-bold leading-none" style={{ color: '#F8F8F2', fontFamily: 'Plus Jakarta Sans' }}>
+                    <h1 className="text-5xl md:text-6xl font-bold leading-none" style={{ color: '#F8F8F2', fontFamily: 'Plus Jakarta Sans' }}>
                         I build things in the cloud to empower people.
                     </h1>
                     <p className="text-lg font-light leading-relaxed" style={{ color: '#bbcabd' }}>
@@ -32,7 +32,7 @@ function Hero() {
                             smooth="easeInOutQuart"
                             duration={600}
                             offset={-80}
-                            className="px-8 py-4 rounded-full font-bold transition-all duration-200 hover:opacity-90 active:scale-95 cursor-pointer"
+                            className="px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base transition-all duration-200 hover:opacity-90 active:scale-95 cursor-pointer"
                             style={{ backgroundColor: '#70FFAF', color: '#00391f' }}
                         >
                             View My Work
@@ -41,7 +41,7 @@ function Hero() {
                             href="https://linkedin.com/in/augustine-chia"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-8 py-4 rounded-full font-bold transition-all duration-300 hover:opacity-80"
+                            className="px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base transition-all duration-300 hover:opacity-80"
                             style={{ border: '1.5px solid #9D7CD8', color: '#9D7CD8' }}
                         >
                             Let's Connect
