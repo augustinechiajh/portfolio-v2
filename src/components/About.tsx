@@ -33,11 +33,11 @@ function About() {
                     </p>
                     <p className="text-base leading-relaxed"
                         style={{ color: '#bbcabd', fontFamily: 'Inter' }}>
-                        In 2021, I spent three months in Sweden on the NUS Overseas College programme studying entrepreneurship at KTH and interning at a medtech company. COVID cut the year short, but on one of those dark winter nights I witnessed an aurora borealis for the first time. Moving green curtains, for just about 15 minutes, inspired me to take the photograph you see on the homepage.
+                        In 2021, I spent three months in Sweden on the NUS Overseas Colleges programme studying entrepreneurship at KTH and interning at a medtech start-up. COVID cut the year short, but on one of those dark winter nights I witnessed an aurora borealis for the first time. Capturing that special moment became the central theme of this portfolio website.
                     </p>
                     <p className="text-base leading-relaxed"
                         style={{ color: '#bbcabd', fontFamily: 'Inter' }}>
-                        These days I build cloud infrastructure at scale, most notably an Amazon Security Lake solution spanning across multiple accounts and regions, work that was featured at AWS re:Invent 2025. When I'm not shipping infrastructure, I'm training for triathlons, recording music, or chasing light with a camera.
+                        These days I build cloud infrastructure at scale, most notably an Amazon Security Lake solution spanning across multiple accounts and regions, work that was featured at AWS re:Invent 2025. When I'm not shipping infrastructure, I'm training for triathlons, recording music, or capturing landscapes through photos.
                     </p>
                 </motion.div>
 
