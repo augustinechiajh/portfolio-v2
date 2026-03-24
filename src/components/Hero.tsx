@@ -56,7 +56,7 @@ function Hero() {
                         )}
                     </h1>
                     <p className="text-lg font-light leading-relaxed" style={{ color: '#bbcabd' }}>
-                        Working at the intersection of engineering and design - building infrastructure and automations that make developers' lives easier, and systems that serve people around the world.
+                        I enjoy working at the intersection of engineering and design — building infrastructure automation that improves developer experience.
                     </p>
                     <div className="flex flex-wrap gap-4 pt-2">
                         <Link

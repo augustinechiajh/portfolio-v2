@@ -63,7 +63,7 @@ function Work() {
                         className="text-4xl font-bold leading-none"
                         style={{ color: '#F8F8F2', fontFamily: 'Plus Jakarta Sans' }}
                     >
-                        Things I've shipped.
+                        Things I've built.
                     </h2>
                 </motion.div>
 
