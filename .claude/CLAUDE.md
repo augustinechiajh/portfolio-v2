@@ -62,6 +62,13 @@ as that photo.
 6. Contact — simple, warm
 7. Footer — minimal
 
+## Nav Mobile Behaviour
+- On mobile: hide nav links, show hamburger menu icon (three lines)
+- On hamburger click: dropdown menu appears showing all nav links vertically
+- Links: Work, Skills, About, Certs
+- Close menu when a link is clicked
+- Hamburger icon color: #F8F8F2
+
 ## Work Section Spec
 
 ### Card 1 — AWS Security Lake
