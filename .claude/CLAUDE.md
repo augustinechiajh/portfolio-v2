@@ -54,13 +54,29 @@ as that photo.
 - Security Lake: 3,000+ accounts, 6 regions, 47% cost reduction — these are verified
 
 ## Sections (in order)
-1. Nav — fixed, backdrop blur, links: Work, Skills, About, Contact
+1. Nav — fixed, backdrop blur, links: Home, About, Work, Certs
 2. Hero — full screen aurora photo, gradient overlays, headline, subtext, 2 CTAs
 3. About — two column, story left, quick facts right
 4. Work — cards for projects (Security Lake, Infra Provisioner, This Site)
 5. Certifications — clean grid of cert badges
 6. Contact — simple, warm
 7. Footer — minimal
+
+## Nav Spec
+- Fixed top, backdrop blur, background rgba(18,19,29,0.8)
+- Left: "Augustine" name in #F8F8F2, Plus Jakarta Sans, font-bold
+- Right: nav links — Home, About, Work, Certs
+- Default link color: #F8F8F2 at 60% opacity
+- Hover: 100% opacity
+- Active link (scrollspy): #70FFAF, full opacity
+- Use react-scroll Link with spy={true} and activeClass for highlighting
+
+## Nav Mobile Behaviour
+- On mobile: hide nav links, show hamburger menu icon (three lines)
+- On hamburger click: dropdown menu appears showing all nav links vertically
+- Links: Home, About, Work, Certs
+- Close menu when a link is clicked
+- Hamburger icon color: #F8F8F2
 
 ## Nav Mobile Behaviour
 - On mobile: hide nav links, show hamburger menu icon (three lines)
@@ -109,6 +125,12 @@ as that photo.
 - Each card is horizontal within the grid cell: cert badge icon left (~80px), details right
 - Details: cert name (bold), issuing body, validity period, short one-line description
 - Verify link at bottom of each card
+- Each cert card has skill tags at the bottom
+- Tag style: same purple bordered pills as Work cards
+- Tags per cert:
+  1. AWS DOP: CI/CD, IaC, Monitoring, Security, Automation
+  2. AWS SAP: Cloud Architecture, Multi-Account, Cost Optimisation, Migration
+  3. HCTA: Terraform, IaC, Provisioning, Automation
 
 ### Certs (in order)
 1. AWS Certified DevOps Engineer - Professional | AWS | Nov 2025 | https://www.credly.com/badges/c4203b0a-6ffa-4836-a879-2771e1c409dd

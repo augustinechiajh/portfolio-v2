@@ -26,11 +26,15 @@ function Nav() {
                         <Link
                             key={to}
                             to={to}
+                            spy={true}
+                            hashSpy={true}
+                            isDynamic={true}
                             smooth="easeInOutQuart"
                             duration={600}
                             offset={-80}
-                            className="text-sm font-bold tracking-widest uppercase transition-opacity duration-200 hover:opacity-100 opacity-60 cursor-pointer"
+                            className="text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:opacity-100 opacity-60 cursor-pointer"
                             style={{ color: '#F8F8F2', fontFamily: 'Plus Jakarta Sans' }}
+                            activeStyle={{ color: '#70FFAF', opacity: 1 }}
                         >
                             {label}
                         </Link>
@@ -80,11 +84,15 @@ function Nav() {
                         <Link
                             key={to}
                             to={to}
+                            spy={true}
+                            hashSpy={true}
+                            isDynamic={true}
                             smooth="easeInOutQuart"
                             duration={600}
                             offset={-80}
-                            className="text-sm font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
+                            className="text-sm font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-all duration-200 cursor-pointer"
                             style={{ color: '#F8F8F2', fontFamily: 'Plus Jakarta Sans' }}
+                            activeStyle={{ color: '#70FFAF', opacity: 1 }}
                             onClick={() => setOpen(false)}
                         >
                             {label}

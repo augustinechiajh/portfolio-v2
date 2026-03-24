@@ -13,6 +13,7 @@ function App() {
       <About />
       <Work />
       <Certs />
+      <div style={{ height: '10vh' }} />
       <Footer />
     </div>
   )

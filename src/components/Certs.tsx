@@ -10,6 +10,7 @@ const certs = [
         description: 'Validates expertise in automating CI/CD pipelines, managing infrastructure as code, and implementing secure, resilient systems on AWS.',
         url: 'https://www.credly.com/badges/c4203b0a-6ffa-4836-a879-2771e1c409dd',
         badge: AWSDevOpsPro,
+        tags: ['CI/CD', 'IaC', 'Monitoring', 'Security', 'Automation'],
     },
     {
         name: 'AWS Certified Solutions Architect - Professional',
@@ -18,6 +19,7 @@ const certs = [
         description: 'Validates expertise in designing scalable AWS architectures, optimizing existing solutions, and leading complex multi-account migrations.',
         url: 'https://www.credly.com/badges/f927ea8a-f173-462f-b24d-9df326d6e2da',
         badge: AWSSAPro,
+        tags: ['Cloud Architecture', 'Multi-Account', 'Cost Optimisation', 'Migration'],
     },
     {
         name: 'HashiCorp Certified: Terraform Associate (003)',
@@ -26,6 +28,7 @@ const certs = [
         description: 'Validates foundational knowledge of Terraform, including infrastructure as code concepts, and best practices for managing infrastructure.',
         url: 'https://www.credly.com/badges/a41a3731-355d-4180-8a32-66e7602818a3',
         badge: HCTA003,
+        tags: ['Terraform', 'IaC', 'Provisioning', 'Automation'],
     },
 ]
 
@@ -98,6 +101,23 @@ function Certs() {
                             >
                                 {cert.description}
                             </p>
+
+                            {/* Skill tags */}
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                {cert.tags.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full"
+                                        style={{
+                                            color: '#9D7CD8',
+                                            border: '1.5px solid #9D7CD8',
+                                            fontFamily: 'Plus Jakarta Sans',
+                                        }}
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
 
                             {/* Verify link */}
                             <a
