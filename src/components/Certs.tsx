@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import AWSDevOpsPro from '../assets/AWSDevOpsPro.png'
 import AWSSAPro from '../assets/AWSSAPro.png'
 import HCTA003 from '../assets/HCTA-003.png'
@@ -32,6 +34,11 @@ const certs = [
     },
 ]
 
+const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
 function Certs() {
     return (
         <section
@@ -42,7 +49,13 @@ function Certs() {
             <div className="max-w-7xl mx-auto">
 
                 {/* Section header */}
-                <div className="mb-16">
+                <motion.div
+                    className="mb-16"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
                     <p
                         className="text-sm font-bold tracking-widest uppercase mb-4"
                         style={{ color: '#70FFAF', fontFamily: 'Plus Jakarta Sans' }}
@@ -55,13 +68,20 @@ function Certs() {
                     >
                         Credentials that back the work.
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Certs grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ staggerChildren: 0.12 }}
+                >
                     {certs.map((cert) => (
-                        <div
+                        <motion.div
                             key={cert.name}
+                            variants={cardVariants}
                             className="group flex flex-col rounded-xl p-6 transition-all duration-300 hover:-translate-y-2"
                             style={{ backgroundColor: '#1a1b26' }}
                         >
@@ -132,9 +152,9 @@ function Certs() {
                                     <path d="M1.5 10.5L10.5 1.5M10.5 1.5H4.5M10.5 1.5V7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </a>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
             </div>
         </section>

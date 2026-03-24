@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
+
 const projects = [
     {
         category: 'Cloud Infrastructure',
@@ -28,6 +31,11 @@ const projects = [
     },
 ]
 
+const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
 function Work() {
     return (
         <section
@@ -38,7 +46,13 @@ function Work() {
             <div className="max-w-7xl mx-auto">
 
                 {/* Section header */}
-                <div className="mb-16">
+                <motion.div
+                    className="mb-16"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
                     <p
                         className="text-sm font-bold tracking-widest uppercase mb-4"
                         style={{ color: '#70FFAF', fontFamily: 'Plus Jakarta Sans' }}
@@ -51,13 +65,20 @@ function Work() {
                     >
                         Things I've shipped.
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Cards grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ staggerChildren: 0.12 }}
+                >
                     {projects.map((project) => (
-                        <div
+                        <motion.div
                             key={project.title}
+                            variants={cardVariants}
                             className="group relative flex flex-col rounded-xl p-8 transition-transform duration-300 hover:-translate-y-1"
                             style={{ backgroundColor: '#12131d' }}
                         >
@@ -132,9 +153,9 @@ function Work() {
                                     </svg>
                                 </a>
                             )}
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     )

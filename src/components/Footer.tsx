@@ -1,11 +1,17 @@
+import { motion } from 'framer-motion'
+
 function Footer() {
     return (
-        <footer
+        <motion.footer
             className="px-12 py-8"
             style={{
                 backgroundColor: '#12131d',
                 borderTop: '1px solid rgba(255,255,255,0.08)',
             }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
 
@@ -46,7 +52,7 @@ function Footer() {
                 </div>
 
             </div>
-        </footer>
+        </motion.footer>
     )
 }
 

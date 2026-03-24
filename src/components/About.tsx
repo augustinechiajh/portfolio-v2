@@ -1,10 +1,24 @@
+import { motion } from 'framer-motion'
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+}
+
 function About() {
     return (
         <section id="about" className="py-32 px-12 max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
                 {/* Left — text */}
-                <div className="space-y-6">
+                <motion.div
+                    className="space-y-6"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
                     <p className="text-sm font-bold tracking-widest uppercase"
                         style={{ color: '#70FFAF', fontFamily: 'Plus Jakarta Sans' }}>
                         About Me
@@ -25,10 +39,17 @@ function About() {
                         style={{ color: '#bbcabd', fontFamily: 'Inter' }}>
                         These days I build cloud infrastructure at scale, most notably an Amazon Security Lake solution spanning across multiple accounts and regions, work that was featured at AWS re:Invent 2025. When I'm not shipping infrastructure, I'm training for triathlons, recording music, or chasing light with a camera.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Right — quick facts */}
-                <div className="space-y-4">
+                <motion.div
+                    className="space-y-4"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+                >
                     {[
                         { label: 'Based in', value: 'Singapore' },
                         { label: 'Current role', value: 'Cloud/DevOps Engineer, MSD' },
@@ -48,7 +69,7 @@ function About() {
                             </span>
                         </div>
                     ))}
-                </div>
+                </motion.div>
 
             </div>
         </section>
