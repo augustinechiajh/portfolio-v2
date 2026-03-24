@@ -15,7 +15,7 @@ const projects = [
         category: 'Developer Experience',
         title: 'Self-Service Infrastructure Provisioner',
         description:
-            'Built a personal project to help developers provision infrastructure through API calls. Instead of knowing which Terraform modules to use, developers call an API with their specifications and compliant Terraform modules automatically provisions the infrastructure for them.',
+            'A personal project exploring self-service infrastructure provisioning. Developers make an API call with their requirements, the app selects the correct Terraform module and provisions the infrastructure automatically against LocalStack. Built with FastAPI and Python.',
         tags: ['Terraform', 'Python', 'API', 'Developer Experience'],
         reInvent: null,
         link: 'https://github.com/augustinechiajh/infra-provisioner-mockup',
