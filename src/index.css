@@ -12,6 +12,11 @@
   --color-cream: #F8F8F2;
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 body {
   background-color: #12131d;
   color: #F8F8F2;

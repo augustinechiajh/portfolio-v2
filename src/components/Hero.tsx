@@ -1,7 +1,26 @@
+import { useState, useEffect } from 'react'
 import aurora from '../assets/aurora.jpg'
 import { Link } from 'react-scroll'
 
+const HEADLINE = "I build things in the cloud to empower people."
+
 function Hero() {
+    const [displayed, setDisplayed] = useState('')
+    const [done, setDone] = useState(false)
+
+    useEffect(() => {
+        let i = 0
+        const interval = setInterval(() => {
+            i++
+            setDisplayed(HEADLINE.slice(0, i))
+            if (i === HEADLINE.length) {
+                clearInterval(interval)
+                setTimeout(() => setDone(true), 800)
+            }
+        }, 40)
+        return () => clearInterval(interval)
+    }, [])
+
     return (
         <section id="hero" className="relative h-screen w-full flex items-center overflow-hidden">
             <div className="absolute inset-0 z-0">
@@ -21,7 +40,20 @@ function Hero() {
                         </span>
                     </div>
                     <h1 className="text-5xl md:text-6xl font-bold leading-none" style={{ color: '#F8F8F2', fontFamily: 'Plus Jakarta Sans' }}>
-                        I build things in the cloud to empower people.
+                        {displayed}
+                        {!done && (
+                            <span
+                                style={{
+                                    display: 'inline-block',
+                                    width: '3px',
+                                    height: '0.85em',
+                                    backgroundColor: '#70FFAF',
+                                    marginLeft: '4px',
+                                    verticalAlign: 'middle',
+                                    animation: 'blink 0.7s step-start infinite',
+                                }}
+                            />
+                        )}
                     </h1>
                     <p className="text-lg font-light leading-relaxed" style={{ color: '#bbcabd' }}>
                         Working at the intersection of engineering and design - building infrastructure and automations that make developers' lives easier, and systems that serve people around the world.

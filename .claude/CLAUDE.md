@@ -85,6 +85,14 @@ as that photo.
 - Close menu when a link is clicked
 - Hamburger icon color: #F8F8F2
 
+## Hero Spec
+- Hero headline has a typing animation on load
+- Types out "I build things in the cloud to empower people."
+- Cursor blinks in #70FFAF while typing
+- Typing speed: fast but readable, around 50ms per character
+- Cursor disappears after typing completes
+- Only runs once on page load
+
 ## Work Section Spec
 
 ### Card 1 — AWS Security Lake
