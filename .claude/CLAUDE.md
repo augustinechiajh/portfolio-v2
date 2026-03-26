@@ -56,8 +56,6 @@ as that photo.
 - Copy must sound like Augustine, not AI
 - No em dashes (flagged as AI language)
 - No vague claims — every achievement must be specific and defensible
-- re:Invent: work was "presented at" not "featured by" Augustine personally
-- Security Lake: 3,000+ accounts, 6 regions, 47% cost reduction — these are verified
 
 ## Sections (in order)
 1. Nav — fixed, backdrop blur, links: Home, About, Work, Certs
@@ -100,31 +98,21 @@ as that photo.
 ### Card 1 — AWS Security Lake
 - Title: AWS Central Logging Using Amazon Security Lake
 - Tag: Cloud Infrastructure
-- Description: Deployed a central logging service using Terraform across
-  3 AWS Organizations, 6 global regions, and 3,000+ accounts. Led engineering
-  of self-service log access automations enabling teams to query data via
-  one-click CloudFormation templates. Resulted in 47% infrastructure cost
-  reduction vs previous custom setup.
+- Description: Developed Terraform templates and CI/CD pipelines to deploy Amazon Security Lake within multiple AWS Organizations, regions, and accounts. The migration from a custom logging solution resulted in a 47% infrastructure cost reduction.
 - Tags: Terraform, AWS, CI/CD, Security
 - Note: Work was presented at AWS re:Invent 2025 (SEC347)
 
 ### Card 2 — Infra Provisioner Mockup
 - Title: Self-Service Infrastructure Provisioner
 - Tag: Developer Experience
-- Description: Built a personal project to make developers' lives easier.
-  Instead of knowing which Terraform modules to use, developers call an API
-  with their specifications and compliant Terraform modules
-  automatically provisions the infrastructure for them.
+- Description: A personal project exploring self-service infrastructure provisioning. Developers make an API call with their requirements, the app selects the correct Terraform module and provisions the infrastructure automatically against LocalStack. Built with FastAPI and Python.
 - Tags: Terraform, Python, API, Developer Experience
 - Link: https://github.com/augustinechiajh/infra-provisioner-mockup
 
 ### Card 3 — This Portfolio Site
 - Title: Portfolio Site Revamp
 - Tag: Learning by Experimentation
-- Description: Rebuilt my portfolio to experience AI-assisted
-  development first hand. Used Google Stitch for design prototyping,
-  Claude Code with spec-driven development, and React + TypeScript replacing
-  a previous Hugo template.
+- Description: Rebuilt my portfolio to experience AI-assisted development first hand, using Google Stitch for design prototyping, Claude Code with spec-driven development, and React + TypeScript replacing a previous Hugo template.
 - Tags: React, TypeScript, Tailwind CSS, Google Stitch, Claude Code
 - Link: https://github.com/augustinechiajh/portfolio-v2
 
@@ -154,7 +142,6 @@ as that photo.
 - Right: LinkedIn and GitHub icon links
 - LinkedIn: https://linkedin.com/in/augustine-chia
 - GitHub: https://github.com/augustinechiajh
-- No "Open to opportunities" or any job-seeking language
 - Background: #12131d, subtle top border rgba(255,255,255,0.08)
 
 ## What Not To Do
