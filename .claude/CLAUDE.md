@@ -156,8 +156,10 @@ as that photo.
 - Platform: GitHub Pages
 - Method: GitHub Actions on push to main
 - Workflow: lint job first, then deploy job (needs: lint)
+- CI command: npm ci instead of npm install
 - Build command: npm run build
 - Output directory: dist
 - Node version: 20
 - Base URL: /portfolio-v2/
 - Vite config: base: '/portfolio-v2/'
+- Use SHA instead of version tags for reusable actions to prevent malicious injections
