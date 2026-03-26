@@ -6,7 +6,7 @@ const projects = [
         category: 'Cloud Infrastructure',
         title: 'AWS Central Logging Using Amazon Security Lake',
         description:
-            'Primary engineer on deploying Amazon Security Lake across multiple AWS Organizations, regions, and accounts using Terraform. The migration from a custom logging solution resulted in a 47% infrastructure cost reduction.',
+            'Developed Terraform templates and CI/CD pipelines to deploy Amazon Security Lake within multiple AWS Organizations, regions, and accounts. The migration from a custom logging solution resulted in a 47% infrastructure cost reduction.',
         tags: ['Terraform', 'AWS', 'CI/CD', 'Security'],
         reInvent: 'Presented at AWS re:Invent 2025 — SEC347',
         link: null,
