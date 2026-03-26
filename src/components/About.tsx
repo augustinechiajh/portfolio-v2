@@ -29,7 +29,7 @@ function About() {
                     </h2>
                     <p className="text-base leading-relaxed"
                         style={{ color: '#bbcabd', fontFamily: 'Inter' }}>
-                        I'm Augustine, a Cloud/DevOps Engineer at MSD Singapore. I graduated from NUS with a degree in Biomedical Engineering and a second major in Innovation & Design. Design thinking methodologies and user-centric design principles are core to how I approach engineering problems.
+                        I'm Augustine, a Cloud Engineer at MSD Singapore. I graduated from NUS with a degree in Biomedical Engineering and a second major in Innovation & Design. Design thinking methodologies and user-centric design principles are core to how I approach engineering problems.
                     </p>
                     <p className="text-base leading-relaxed"
                         style={{ color: '#bbcabd', fontFamily: 'Inter' }}>
@@ -52,7 +52,7 @@ function About() {
                 >
                     {[
                         { label: 'Based in', value: 'Singapore' },
-                        { label: 'Current role', value: 'Cloud/DevOps Engineer, MSD' },
+                        { label: 'Current role', value: 'Cloud Engineer, MSD' },
                         { label: 'Education', value: 'BEng Biomedical Engineering, NUS' },
                         { label: 'Certifications', value: 'AWS Solutions Architect Professional, AWS DevOps Professional, Terraform Associate' },
                         { label: 'Outside work', value: 'Triathlon · Music · Photography' },

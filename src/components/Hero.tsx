@@ -36,7 +36,7 @@ function Hero() {
                             <span className="relative inline-flex rounded-full h-3 w-3" style={{ backgroundColor: '#70FFAF' }} />
                         </span>
                         <span className="text-xs font-bold tracking-widest uppercase" style={{ color: '#70FFAF' }}>
-                            Cloud Infrastructure Engineer
+                            Cloud Engineer
                         </span>
                     </div>
                     <h1 className="text-5xl md:text-6xl font-bold leading-none" style={{ color: '#F8F8F2', fontFamily: 'Plus Jakarta Sans' }}>

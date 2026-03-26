@@ -1,7 +1,7 @@
 # Portfolio Site — Claude Code Instructions
 
 ## Project Overview
-Personal portfolio site for Augustine, Cloud/DevOps Engineer.
+Personal portfolio site for Augustine, Cloud Engineer.
 Built with React + TypeScript + Tailwind CSS + Vite.
 Deployed to GitHub Pages.
 
